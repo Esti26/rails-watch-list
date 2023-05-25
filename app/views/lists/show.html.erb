@@ -1,0 +1,12 @@
+  <h1>Movies in the <%=@list.name%> Category</h1>
+
+  <ul>
+  <% @movies.each do |movie|%>
+    <li>
+      <%= movie.title%>
+    </li>
+  <% end %>
+
+</ul>
+
+  <%= link_to "Add new Movie", new_list_bookmark_path(@list.id), class: "btn btn-primary" %>
