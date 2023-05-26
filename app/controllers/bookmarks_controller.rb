@@ -1,4 +1,3 @@
-require 'pry-byebug'
 class BookmarksController < ApplicationController
   def new
     @bookmark = Bookmark.new
