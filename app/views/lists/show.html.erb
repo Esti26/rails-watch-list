@@ -1,9 +1,10 @@
   <h1>Movies in the <%=@list.name%> Category</h1>
 
   <ul>
-  <% @movies.each do |movie|%>
+  <% @list.bookmarks.each do |bookmark|%>
     <li>
-      <%= movie.title%>
+      <%= bookmark.movie.title%>
+      <%= link_to "Delete movie", bookmark_path(bookmark.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </li>
   <% end %>
 

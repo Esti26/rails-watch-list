@@ -1,3 +1,4 @@
+require 'pry-byebug'
 class BookmarksController < ApplicationController
   def new
     @bookmark = Bookmark.new
@@ -13,6 +14,13 @@ class BookmarksController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    bookmark = Bookmark.find(params[:id])
+    list = bookmark.list
+    bookmark.delete
+    redirect_to list_path(list)
   end
 
   private

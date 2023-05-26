@@ -21,6 +21,8 @@ class ListsController < ApplicationController
     @movies = @list.movies
   end
 
+ 
+
   private
 
   def list_params
