@@ -1,4 +1,5 @@
   <h1>Movies in the <%=@list.name%> Category</h1>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 
   <ul>
   <% @list.bookmarks.each do |bookmark|%>
